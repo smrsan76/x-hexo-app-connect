@@ -1,6 +1,6 @@
 {
   "name": "x-hexo-app-connect",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "It lets you use hexo as a route in your main express/connect app",
   "main": "index.js",
   "directories": {
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smrsan76/hexo-app-connect.git"
+    "url": "git+https://github.com/smrsan76/x-hexo-app-connect.git"
   },
   "keywords": [
     "hexo",
