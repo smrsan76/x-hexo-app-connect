@@ -1,0 +1,5 @@
+# Ignore Test Files
+create-test.sh
+_configs-sample.yml
+index-test.js
+index-test-blogs.js
