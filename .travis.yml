@@ -17,4 +17,4 @@ install:
 
 script:
   - cd ./test
-  - node ./test/index.js
+  - node ./index.js
