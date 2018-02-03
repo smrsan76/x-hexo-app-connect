@@ -16,4 +16,5 @@ install:
   - ./create-test.sh
 
 script:
+  - cd ./test
   - node ./test/index.js
