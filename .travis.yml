@@ -9,8 +9,11 @@ node_js:
   - "6"
   - "node"
 
-before_script:
+before_install:
   - sudo chmod +x create-test.sh
 
+install:
+  - ./create-test.sh
+
 script:
-  - sudo ./create-test.sh
+  - node ./test/index.js

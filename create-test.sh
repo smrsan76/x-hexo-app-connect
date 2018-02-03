@@ -57,4 +57,4 @@ for blogName in ${blogs[@]} ; do
 done
 
 # Execute the main app (which has multiple blogs)
-node ./index.js
+# node ./index.js
