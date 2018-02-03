@@ -22,8 +22,8 @@ myServer.listen(PORT, function(err){
 
     setTimeout(function(){
 
-        myServer.close();
+        process.exit(0);
 
-    },3000);
+    },1000);
 
 });
