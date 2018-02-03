@@ -4,9 +4,7 @@
 rm -rf ./test/
 
 # Install hexo-cli globally
-if [[ $( sudo npm list -g hexo-cli | grep hexo-cli ) = "" ]] ; then
-    sudo npm i hexo-cli -g
-fi
+npm i hexo-cli -g
 
 # Make "test" directory
 mkdir test
