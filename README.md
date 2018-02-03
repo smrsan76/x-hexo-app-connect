@@ -1,4 +1,7 @@
 # x-hexo-app-connect
+
+[![Travis](https://api.travis-ci.org/smrsan76/x-hexo-app-connect.svg?branch=master)]
+
 It lets you use hexo app(s) as route(s) in your express/connect app
 
 [![NPM](https://nodei.co/npm/x-hexo-app-connect.png)](https://nodei.co/npm/x-hexo-app-connect/)

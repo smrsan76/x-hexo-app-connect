@@ -24,6 +24,6 @@ myServer.listen(PORT, function(err){
 
         process.exit(0);
 
-    },1000);
+    },10000);
 
 });
