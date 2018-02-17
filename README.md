@@ -206,6 +206,9 @@ succeed.
 
 
 ## 2. Configurations
+There are 2 ways for [x-hexo-app-connect](https://npmjs.com/package/x-hexo-app-connect) configuration.
+
+### 1. Config :: Using Hexo `_configs.yml` File
 There is a `_configs.yml` file inside of your blog's directory.
 Add these configuration lines to `_configs.yml` content:
 ```yaml
@@ -219,6 +222,21 @@ app:
 ```
 The configs above are default configs, too.
 
+### 2. Config :: Using The Third Argument
+__**Recommended**__: Simply enter an object to the third argument of this package's function:
+```javascript
+hexoApp(
+    yourApp,
+    hexo,
+    { // The Configs/Options
+        log: false,
+        compress: false,
+        header: true,
+        serveStatic: false
+        route: "/"
+    });
+```
+
 ### Config Explanations
 `log` : logs some information about hexo state.
 
@@ -231,7 +249,9 @@ The configs above are default configs, too.
 `route` : determines that hexo runs on which route of your (connect|express|...) application.
 
 > Note: Determining the `route` in it's configs is __**SO IMPORTANT**__; because it can cause
- your app to not load pages correctly. so be careful about it.
+ your app to not load pages correctly. so be careful about it and I recommend you to use
+ [the second approach](#2-config-using-the-third-argument)
+ for configuration.
 
 > Note: Use the complete route string which [x-hexo-app-connect](https://npmjs.com/package/x-hexo-app-connect)
 connects to your (connect|express|...) app in it.

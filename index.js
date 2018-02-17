@@ -1,7 +1,7 @@
 /* global hexo */
 "use strict";
 
-exports = module.exports = function(app, hexoInstance){
+exports = module.exports = function(app, hexoInstance, opts){
 
     /*/ Dependencies /*/
     var connect = require('connect');
@@ -22,14 +22,18 @@ exports = module.exports = function(app, hexoInstance){
                 .then(function(){
 
                     /*/ Step 2 => Get Hexo Configs /*/
-                    var config = hexoInstance.config.app;
-                    config = assign({
-                        log: false,
-                        compress: false,
-                        header: true,
-                        serveStatic: false,
-                        route: '/'
-                    }, config);
+                    var config = hexoInstance.config.app || {};
+                    opts = typeof(opts) !== "object" ? {} : opts;
+                    config = assign(
+                        assign({
+                            log: false,
+                            compress: false,
+                            header: true,
+                            serveStatic: false,
+                            route: '/'
+                        }, config),
+                        opts
+                    );
 
                     /*/ Step 3 => Overwrite url_for() helper /*/
                     hexoInstance.extend.helper.register('url_for', require('./lib/helper/url_for'));
@@ -65,7 +69,9 @@ exports = module.exports = function(app, hexoInstance){
                         .then(function(){
 
                             hexoInstance.log.info('[Hexo-App-Connect] is running on route ' + config.route);
-                            resolve(config);
+
+                            /*/ Step 6 => Use hexoApp as route in your app /*/
+                            app.use(config.route, hexoApp);
 
                         })
                         .catch(function(err){
@@ -96,7 +102,6 @@ exports = module.exports = function(app, hexoInstance){
 
     }
 
-
     hexoInstance.extend.filter.register('server_middleware', require('./lib/middleware/header'));
     hexoInstance.extend.filter.register('server_middleware', require('./lib/middleware/gzip'));
     hexoInstance.extend.filter.register('server_middleware', require('./lib/middleware/logger'));
@@ -104,14 +109,7 @@ exports = module.exports = function(app, hexoInstance){
     hexoInstance.extend.filter.register('server_middleware', require('./lib/middleware/static'));
     hexoInstance.extend.filter.register('server_middleware', require('./lib/middleware/redirect'));
 
-    run()
-        .then(function(appConfig){
-
-            /*/ Step 6 => Use hexoApp as route in your app /*/
-            app.use(appConfig.route, hexoApp);
-
-        });
-
+    run();
 
     return hexoApp;
 
