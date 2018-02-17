@@ -250,7 +250,7 @@ hexoApp(
 
 > Note: Determining the `route` in it's configs is __**SO IMPORTANT**__; because it can cause
  your app to not load pages correctly. so be careful about it and I recommend you to use
- [the second approach](#2-config-using-the-third-argument)
+ [the second approach](#2-config--using-the-third-argument)
  for configuration.
 
 > Note: Use the complete route string which [x-hexo-app-connect](https://npmjs.com/package/x-hexo-app-connect)
