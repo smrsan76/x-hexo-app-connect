@@ -223,7 +223,7 @@ app:
 The configs above are default configs, too.
 
 ### 2. Config :: Using The Third Argument
-__**Recommended**__: Simply enter an object to the third argument of this package's function:
+__**(>= v2.0.5) Recommended**__: Simply enter an object to the third argument of this package's function:
 ```javascript
 hexoApp(
     yourApp,
