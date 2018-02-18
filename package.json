@@ -1,6 +1,6 @@
 {
   "name": "x-hexo-app-connect",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "It lets you use hexo as a route in your main express/connect app",
   "main": "index.js",
   "directories": {
