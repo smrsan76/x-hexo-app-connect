@@ -39,10 +39,13 @@ exports = module.exports = function(app, hexoInstance, opts){
                                     hexoInstance.config.app
                                 );
 
-                    /*/ Step 4 => Overwrite url_for() helper /*/
+                    /*/ Step 4 => Apply Configs/Options on The Configs of Intended Hexo Instance /*/
+                    hexoInstance.config.app = config;
+
+                    /*/ Step 5 => Overwrite url_for() helper /*/
                     hexoInstance.extend.helper.register('url_for', require('./lib/helper/url_for'));
 
-                    /*/ Step 5 => Extend Hexo with App /*/
+                    /*/ Step 6 => Extend Hexo with App /*/
                     hexoInstance
                         .extend
                         .filter
@@ -62,7 +65,7 @@ exports = module.exports = function(app, hexoInstance, opts){
                         })
                         .then(function(){
 
-                            /*/ Step 6 => Run (Watch/Load) Hexo /*/
+                            /*/ Step 7 => Run (Watch/Load) Hexo /*/
                             if(config.serveStatic)
 
                                 return hexoInstance.load();
@@ -74,7 +77,7 @@ exports = module.exports = function(app, hexoInstance, opts){
 
                             hexoInstance.log.info('[Hexo-App-Connect] is running on route ' + config.route);
 
-                            /*/ Step 7 => Use hexoApp as route in your app /*/
+                            /*/ Step 8 => Use hexoApp as route in your app /*/
                             app.use(config.route, hexoApp);
 
                         })
