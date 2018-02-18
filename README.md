@@ -270,7 +270,7 @@ the helpers which use url_for, like:
 - [js()](https://hexo.io/docs/helpers.html#js)
 - [link_to()](https://hexo.io/docs/helpers.html#https://hexo.io/docs/helpers.html#link-to)
 
-to solve that.
+then add a slash '/' after the `archives page` url to solve that.
 
 #### Relative Packages
 * [x-hexo-app-express](https://npmjs.com/package/x-hexo-app-express)
