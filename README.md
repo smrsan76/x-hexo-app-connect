@@ -232,7 +232,7 @@ hexoApp(
         log: false,
         compress: false,
         header: true,
-        serveStatic: false
+        serveStatic: false,
         route: "/"
     });
 ```
